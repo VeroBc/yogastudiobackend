@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_pictures_pictures",
+  "info": {
+    "name": "Pictures",
+    "icon": "images"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "Descripcion": {
+      "type": "richtext"
+    },
+    "Picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programmed_classes",
+  "info": {
+    "name": "ProgrammedClass",
+    "description": "Clases que estan programadas."
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "fecha_hora": {
+      "type": "datetime"
+    },
+    "duracion": {
+      "type": "integer",
+      "max": 900,
+      "min": 15
+    },
+    "tags": {
+      "type": "json"
+    },
+    "video_link": {
+      "type": "string"
+    },
+    "zoom_link": {
+      "type": "string"
+    },
+    "clase": {
+      "model": "clases",
+      "via": "programmed_classes"
+    },
+    "usuarios": {
+      "collection": "usuario",
+      "via": "programmed_classes"
+    }
+  }
+}

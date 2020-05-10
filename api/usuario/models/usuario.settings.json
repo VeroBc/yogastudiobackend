@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "usuarios",
+  "info": {
+    "name": "Usuario"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "activo": {
+      "type": "boolean"
+    },
+    "nombres": {
+      "type": "string"
+    },
+    "apellidos": {
+      "type": "string"
+    },
+    "tipo_usuario": {
+      "type": "enumeration",
+      "enum": [
+        "Admin",
+        "Teacher",
+        "Student"
+      ],
+      "required": true,
+      "unique": true
+    },
+    "tipo_documento": {
+      "type": "enumeration",
+      "enum": [
+        "DNI",
+        "CE",
+        "PASAPORTE"
+      ]
+    },
+    "numero_documento": {
+      "type": "string"
+    },
+    "ruc": {
+      "type": "string"
+    },
+    "celular": {
+      "type": "string"
+    },
+    "social_network": {
+      "type": "string"
+    },
+    "profile_picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "programmed_classes": {
+      "via": "usuarios",
+      "collection": "programmed-class",
+      "dominant": true
+    },
+    "Pictures": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pictures.pictures"
+    },
+    "Videos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "videos.videos"
+    }
+  }
+}

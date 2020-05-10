@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clases",
+  "info": {
+    "name": "clases"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "richtext"
+    },
+    "estilo": {
+      "type": "enumeration",
+      "enum": [
+        "HathaYoga",
+        "IyengarYoga",
+        "AshtangaYoga",
+        "YinYoga"
+      ]
+    },
+    "nivel": {
+      "type": "enumeration",
+      "enum": [
+        "Basico",
+        "Intermedio",
+        "AdultoMayor",
+        "Kids"
+      ]
+    },
+    "activo": {
+      "type": "boolean"
+    },
+    "programmed_classes": {
+      "via": "clase",
+      "collection": "programmed-class"
+    },
+    "pictures": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pictures.pictures"
+    },
+    "videos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "videos.videos"
+    },
+    "formato": {
+      "type": "enumeration",
+      "enum": [
+        "ClasesRegulares",
+        "Workshop",
+        "TT"
+      ]
+    },
+    "duracion": {
+      "type": "integer",
+      "max": 900,
+      "min": 15
+    }
+  }
+}

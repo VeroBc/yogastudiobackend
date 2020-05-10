@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/programmed-classes",
+      "handler": "programmed-class.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/programmed-classes/count",
+      "handler": "programmed-class.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/programmed-classes/:id",
+      "handler": "programmed-class.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/programmed-classes",
+      "handler": "programmed-class.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/programmed-classes/:id",
+      "handler": "programmed-class.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/programmed-classes/:id",
+      "handler": "programmed-class.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
